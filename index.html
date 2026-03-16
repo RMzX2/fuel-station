@@ -651,7 +651,7 @@ function startFueling() {
   document.getElementById('btnReset').classList.remove('show');
   document.getElementById('priceInput').disabled = true;
   document.querySelectorAll('.f-btn').forEach(b => b.disabled = true);
-  setStatus('DISPENSING...', true);
+  setStatus('FUELING...', true);
   setLights(true);
 
   const totalLiters = targetAmount / pricePerLiter;
