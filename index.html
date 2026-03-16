@@ -552,10 +552,10 @@ body::before {
         ⛽&nbsp;&nbsp;Fill
       </button>
       <button class="btn-stop" id="btnStop" onclick="stopFueling()">
-        ■&nbsp;&nbsp;หยุดเติม
+        ■&nbsp;&nbsp;STOP
       </button>
       <button class="btn-reset" id="btnReset" onclick="resetAll()">
-        ↺&nbsp;&nbsp;เติมใหม่
+        ↺&nbsp;&nbsp;RETRY
       </button>
 
     </div>
@@ -627,7 +627,7 @@ function setLights(on) {
 // ── START FUELING ────────────────────────────────────────────────────────
 function startFueling() {
   if (!selectedFuel) {
-    toast('⚠  เลือกประเภทน้ำมันก่อน', '#ffaa00');
+    toast('⚠  SELECT FUEL TYPE', '#ffaa00');
     setStatus('SELECT FUEL TYPE', false);
     return;
   }
@@ -646,7 +646,7 @@ function startFueling() {
   // UI state
   document.getElementById('btnFill').disabled = true;
   document.getElementById('btnFill').classList.add('fueling');
-  document.getElementById('btnFill').innerHTML = '⏳&nbsp;&nbsp;กำลังเติม...';
+  document.getElementById('btnFill').innerHTML = '⏳&nbsp;&nbsp;FUELING...';
   document.getElementById('btnStop').classList.add('show');
   document.getElementById('btnReset').classList.remove('show');
   document.getElementById('priceInput').disabled = true;
@@ -705,7 +705,7 @@ function finishFueling(full) {
 
   setTimeout(() => {
     generatePDF();
-    toast('📄  ดาวน์โหลดใบเสร็จแล้ว!', '#39ff14');
+    toast('COMPLETE!', '#39ff14');
     setLights(false);
   }, 500);
 }
